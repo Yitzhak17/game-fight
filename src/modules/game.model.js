@@ -13,4 +13,9 @@ export const attack = () => {
 const reduceEnemyHp = () => {
   enemyHp -= 7;
   console.log(`Enemy HP: ${enemyHp}`);
+  switchTurns();
 }
+
+const switchTurns = () => {
+  isUserTurn = !isUserTurn;
+} 
