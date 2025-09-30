@@ -20,7 +20,15 @@ const reduceEnemyHp = () => {
   enemyHp -= generateRandomDmg();
   console.log(`Enemy HP: ${enemyHp}`);
   switchTurns();
+  checkWinnerState();
   setEnenmyTimeAttack();
+}
+
+const checkWinnerState = () => {
+  const winner = userHp <= 0 ? 'Enemy' : enemyHp <= 0 ? 'User' : null;
+  if (winner) {
+    isGameRunning = false;
+  }
 }
 
 const setEnenmyTimeAttack = () => {
